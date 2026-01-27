@@ -1,0 +1,27 @@
+{
+    "name": "feellike",
+    "version": "0.0.0",
+    "private": true,
+    "description": "Feel Economy - 감정 기반 소비 추천 서비스",
+    "scripts": {
+        "dev": "turbo run dev",
+        "dev:all": "concurrently \"pnpm run dev\" \"pnpm run functions:serve\"",
+        "build": "turbo run build",
+        "lint": "turbo run lint",
+        "typecheck": "turbo run typecheck",
+        "clean": "turbo run clean && rm -rf node_modules",
+        "functions:serve": "npx supabase functions serve --env-file supabase/.env.local --no-verify-jwt",
+        "ollama:start": "docker start ollama || docker run -d --name ollama -p 11434:11434 -e OLLAMA_HOST=0.0.0.0 ollama/ollama",
+        "ollama:stop": "docker stop ollama",
+        "ollama:logs": "docker logs -f ollama"
+    },
+    "devDependencies": {
+        "turbo": "catalog:",
+        "@react-native-community/cli": "latest"
+    },
+    "packageManager": "pnpm@9.5.0",
+    "engines": {
+        "node": ">=20.0.0",
+        "pnpm": ">=9.0.0"
+    }
+}

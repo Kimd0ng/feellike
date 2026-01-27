@@ -1,0 +1,36 @@
+{
+    "name": "@feellike/client",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "lint": "eslint .",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@feellike/api": "workspace:*",
+        "@feellike/ui": "workspace:*",
+        "@supabase/supabase-js": "catalog:",
+        "@tanstack/react-query": "catalog:",
+        "jotai": "catalog:",
+        "react": "catalog:",
+        "react-dom": "catalog:",
+        "react-router": "catalog:",
+        "react-router-dom": "catalog:"
+    },
+    "devDependencies": {
+        "@feellike/eslint-config": "workspace:*",
+        "@feellike/typescript-config": "workspace:*",
+        "@types/react": "^19.0.1",
+        "@types/react-dom": "^19.0.1",
+        "@vanilla-extract/css": "^1.18.0",
+        "@vanilla-extract/vite-plugin": "^5.1.4",
+        "@vitejs/plugin-react": "catalog:",
+        "eslint": "catalog:",
+        "typescript": "catalog:",
+        "vite": "catalog:"
+    }
+}

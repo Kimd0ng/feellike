@@ -1,0 +1,17 @@
+{
+    "extends": "@feellike/typescript-config/react-library.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "declaration": true,
+        "noEmit": false,
+        "allowImportingTsExtensions": false
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

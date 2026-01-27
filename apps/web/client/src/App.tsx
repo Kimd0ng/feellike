@@ -1,0 +1,80 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './providers/AuthProvider';
+import { HomePage } from './pages/home/HomePage';
+import { MoodInputPage } from './pages/mood-input/MoodInputPage';
+import { LoadingPage } from './pages/loading/LoadingPage';
+import { ResultPage } from './pages/result/ResultPage';
+import { HistoryPage } from './pages/history/HistoryPage';
+import { LoginPage } from './pages/login/LoginPage';
+import { SignupPage } from './pages/signup/SignupPage';
+import { SubscriptionPage } from './pages/subscription/SubscriptionPage';
+import { PaymentSuccessPage, PaymentFailPage } from './pages/payment';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import { MainLayout } from './layouts/MainLayout';
+import { AboutPage } from './pages/about/AboutPage';
+import { AnalysisPage } from './pages/analysis/AnalysisPage';
+
+/**
+ * App 컴포넌트
+ * 메인 라우터 설정
+ * @author Feel Economy Team
+ */
+export const App = () => {
+    return (
+        <BrowserRouter>
+            <AuthProvider>
+                <Routes>
+                    <Route element={<MainLayout />}>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/about" element={<AboutPage />} />
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="/signup" element={<SignupPage />} />
+                        <Route path="/mood-input" element={<MoodInputPage />} />
+                        <Route path="/loading" element={<LoadingPage />} />
+                        <Route path="/result" element={<ResultPage />} />
+                        <Route
+                            path="/analysis"
+                            element={
+                                <ProtectedRoute>
+                                    <AnalysisPage />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/history"
+                            element={
+                                <ProtectedRoute>
+                                    <HistoryPage />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/subscription"
+                            element={
+                                <ProtectedRoute>
+                                    <SubscriptionPage />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/payment/success"
+                            element={
+                                <ProtectedRoute>
+                                    <PaymentSuccessPage />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/payment/fail"
+                            element={
+                                <ProtectedRoute>
+                                    <PaymentFailPage />
+                                </ProtectedRoute>
+                            }
+                        />
+                    </Route>
+                </Routes>
+            </AuthProvider>
+        </BrowserRouter>
+    );
+};

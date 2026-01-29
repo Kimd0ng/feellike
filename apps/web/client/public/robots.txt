@@ -1,0 +1,17 @@
+# FeelLike robots.txt
+# https://feellike.app
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://feellike.app/sitemap.xml
+
+# Disallow private/authenticated routes
+Disallow: /mood-input
+Disallow: /loading
+Disallow: /result
+Disallow: /history
+Disallow: /analysis
+Disallow: /subscription
+Disallow: /payment/

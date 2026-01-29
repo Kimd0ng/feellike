@@ -13,6 +13,9 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 import { MainLayout } from './layouts/MainLayout';
 import { AboutPage } from './pages/about/AboutPage';
 import { AnalysisPage } from './pages/analysis/AnalysisPage';
+import { PrivacyPage, TermsPage, ContactPage } from './pages/legal';
+import { GuidePage } from './pages/guide';
+import { FaqPage } from './pages/faq';
 
 /**
  * App 컴포넌트
@@ -27,6 +30,11 @@ export const App = () => {
                     <Route element={<MainLayout />}>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/about" element={<AboutPage />} />
+                        <Route path="/guide" element={<GuidePage />} />
+                        <Route path="/faq" element={<FaqPage />} />
+                        <Route path="/privacy" element={<PrivacyPage />} />
+                        <Route path="/terms" element={<TermsPage />} />
+                        <Route path="/contact" element={<ContactPage />} />
                         <Route path="/login" element={<LoginPage />} />
                         <Route path="/signup" element={<SignupPage />} />
                         <Route path="/mood-input" element={<MoodInputPage />} />

@@ -9,6 +9,7 @@ import {
     header,
     title,
     subtitle,
+    contentWrapper, // Import new class
     emotionGrid,
     divider,
     freeTextSection,
@@ -66,30 +67,32 @@ export const MoodInputPage = () => {
                 <p className={subtitle}>감정을 선택하거나 자유롭게 표현해주세요</p>
             </div>
 
-            <div className={emotionGrid}>
-                {EMOTIONS.map((emotion) => (
-                    <EmotionButton
-                        key={emotion.value}
-                        emoji={emotion.emoji}
-                        label={emotion.label}
-                        selected={selectedEmotion === emotion.value}
-                        onClick={() => handleEmotionSelect(emotion.value)}
+            <div className={contentWrapper}>
+                <div className={emotionGrid}>
+                    {EMOTIONS.map((emotion) => (
+                        <EmotionButton
+                            key={emotion.value}
+                            emoji={emotion.emoji}
+                            label={emotion.label}
+                            selected={selectedEmotion === emotion.value}
+                            onClick={() => handleEmotionSelect(emotion.value)}
+                        />
+                    ))}
+                </div>
+
+                <div className={divider}>또는</div>
+
+                <div className={freeTextSection}>
+                    <Input
+                        placeholder="지금 기분을 자유롭게 표현해보세요..."
+                        value={freeText}
+                        onChange={(e) => {
+                            setFreeText(e.target.value);
+                            setSelectedEmotion(''); // 자유 입력 시 감정 선택 초기화
+                        }}
+                        inputSize="large"
                     />
-                ))}
-            </div>
-
-            <div className={divider}>또는</div>
-
-            <div className={freeTextSection}>
-                <Input
-                    placeholder="지금 기분을 자유롭게 표현해보세요..."
-                    value={freeText}
-                    onChange={(e) => {
-                        setFreeText(e.target.value);
-                        setSelectedEmotion(''); // 자유 입력 시 감정 선택 초기화
-                    }}
-                    inputSize="large"
-                />
+                </div>
             </div>
 
             <div className={actions}>

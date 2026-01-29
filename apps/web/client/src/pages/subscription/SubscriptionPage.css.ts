@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { COLORS } from '@feellike/ui';
+import { media } from '../../styles/media';
 
 export const container = style({
     display: 'flex',
@@ -43,6 +44,14 @@ export const content = style({
     maxWidth: 480,
     width: '100%',
     margin: '0 auto',
+    '@media': {
+        [media.desktop]: {
+            maxWidth: '100%',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            alignItems: 'start',
+        },
+    },
 });
 
 export const currentPlanCard = style({
@@ -133,6 +142,12 @@ export const premiumCard = style({
     borderRadius: 20,
     position: 'relative',
     overflow: 'hidden',
+    // Make premium card span 2 rows on desktop if needed, or stick to flow
+    '@media': {
+        [media.desktop]: {
+            gridRow: 'span 2',
+        },
+    },
 });
 
 export const premiumLabel = style({
@@ -229,6 +244,11 @@ export const paymentHistory = style({
     backdropFilter: 'blur(10px)',
     borderRadius: 16,
     border: '1px solid rgba(255, 255, 255, 0.1)',
+    '@media': {
+        [media.desktop]: {
+            gridColumn: '1 / -1',
+        },
+    },
 });
 
 export const historyTitle = style({

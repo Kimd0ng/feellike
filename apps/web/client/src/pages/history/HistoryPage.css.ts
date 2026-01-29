@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { media } from '../../styles/media';
 
 export const container = style({
     display: 'flex',
@@ -46,10 +47,23 @@ export const historyList = style({
     display: 'flex',
     flexDirection: 'column',
     gap: 16,
+    '@media': {
+        [media.tablet]: {
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+        },
+        [media.desktop]: {
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+        },
+    },
 });
 
 export const historyItem = style({
     padding: 20,
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
 });
 
 export const itemHeader = style({
@@ -74,6 +88,7 @@ export const recommendationText = style({
     fontSize: 14,
     color: '#6B7280',
     marginBottom: 8,
+    flex: 1, // Let text take available space
 });
 
 export const platformTag = style({
@@ -84,6 +99,7 @@ export const platformTag = style({
     fontSize: 12,
     fontWeight: 500,
     color: '#92400E',
+    alignSelf: 'flex-start', // Prevent stretching
 });
 
 export const emptyState = style({
@@ -119,6 +135,16 @@ export const pagination = style({
     backgroundColor: 'rgba(249, 250, 251, 0.95)',
     backdropFilter: 'blur(8px)',
     borderTop: '1px solid #E5E7EB',
+    '@media': {
+        [media.desktop]: {
+            left: '50%',
+            transform: 'translateX(-50%)',
+            maxWidth: '1200px', // Match MainLayout content max-width
+            width: '100%',
+            // remove border top and make it float? or keep it docked to bottom.
+            // Docked to bottom is fine.
+        },
+    },
 });
 
 export const pageInfo = style({

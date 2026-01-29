@@ -18,6 +18,10 @@ import {
     platformButton,
     secondaryActions,
     sectionLabel,
+    pastLogsContainer,
+    pastLogsLabel,
+    pastLogsCard,
+    pastLogItem,
 } from './ResultPage.css';
 
 const PLATFORM_NAMES = {
@@ -113,27 +117,13 @@ export const ResultPage = () => {
                 </Card>
 
                 {recommendation.pastContext && recommendation.pastContext.logs.length > 0 && (
-                    <div style={{ marginTop: '24px', opacity: 0.9 }}>
-                        <p style={{ fontSize: '14px', color: '#fff', marginBottom: '12px' }}>
+                    <div className={pastLogsContainer}>
+                        <p className={pastLogsLabel}>
                             💡 이전에도 비슷한 날엔 이런 걸 추천받으셨네요:
                         </p>
-                        <div
-                            style={{
-                                background: 'rgba(255, 255, 255, 0.1)',
-                                borderRadius: '16px',
-                                padding: '16px',
-                                backdropFilter: 'blur(10px)',
-                            }}
-                        >
+                        <div className={pastLogsCard}>
                             {recommendation.pastContext.logs.slice(0, 2).map((log, index) => (
-                                <div
-                                    key={index}
-                                    style={{
-                                        fontSize: '14px',
-                                        color: '#fff',
-                                        marginBottom: index === 0 ? '8px' : '0',
-                                    }}
-                                >
+                                <div key={index} className={pastLogItem}>
                                     • {log.recommendation.recommendation}
                                 </div>
                             ))}

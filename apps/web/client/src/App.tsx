@@ -14,7 +14,13 @@ import { MainLayout } from './layouts/MainLayout';
 import { AboutPage } from './pages/about/AboutPage';
 import { AnalysisPage } from './pages/analysis/AnalysisPage';
 import { PrivacyPage, TermsPage, ContactPage } from './pages/legal';
-import { GuidePage } from './pages/guide';
+import {
+    GuidePage,
+    WeatherDepression,
+    Productivity,
+    SleepQuality,
+    AnxietyCare,
+} from './pages/guide';
 import { FaqPage } from './pages/faq';
 
 /**
@@ -32,6 +38,22 @@ export const App = () => {
                         <Route path="/about" element={<AboutPage />} />
                         <Route path="/guide" element={<GuidePage />} />
                         <Route path="/faq" element={<FaqPage />} />
+                        <Route
+                            path="/guide/weather-depression"
+                            element={<WeatherDepression />}
+                        />
+                        <Route
+                            path="/guide/productivity"
+                            element={<Productivity />}
+                        />
+                        <Route
+                            path="/guide/sleep-quality"
+                            element={<SleepQuality />}
+                        />
+                        <Route
+                            path="/guide/anxiety-care"
+                            element={<AnxietyCare />}
+                        />
                         <Route path="/privacy" element={<PrivacyPage />} />
                         <Route path="/terms" element={<TermsPage />} />
                         <Route path="/contact" element={<ContactPage />} />

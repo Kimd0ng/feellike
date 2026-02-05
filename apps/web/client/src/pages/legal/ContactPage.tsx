@@ -123,11 +123,11 @@ export const ContactPage = () => {
                 <h4 className={businessTitle}>FeelLike 사업자 정보</h4>
                 <p className={businessText}>
                     상호명: FeelLike (필라이크)<br />
-                    대표자: FeelLike Team<br />
-                    사업자등록번호: 000-00-00000<br />
-                    통신판매업신고번호: 제0000-서울강남-0000호<br />
-                    이메일: contact@feellike.app<br />
-                    주소: 서울특별시 강남구<br />
+                    대표자: 김동현<br />
+                    {/* 사업자등록번호: 000-00-00000<br /> */}
+                    {/* 통신판매업신고번호: 제0000-서울강남-0000호<br /> */}
+                    이메일: kdongh0406@gmail.com<br />
+                    {/* 주소: 서울특별시 강남구<br /> */}
                 </p>
             </div>
         </div>

@@ -15,6 +15,9 @@ export const Header = () => {
             </Link>
 
             <nav className={nav}>
+                <Link to="/community" className={navLink}>
+                    커뮤니티
+                </Link>
                 {isAuthenticated && (
                     <>
                         <Link to="/analysis" className={navLink}>

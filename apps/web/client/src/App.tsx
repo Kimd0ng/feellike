@@ -22,6 +22,7 @@ import {
     AnxietyCare,
 } from './pages/guide';
 import { FaqPage } from './pages/faq';
+import { CommunityPage, PostDetailPage, WritePostPage } from './pages/community';
 
 /**
  * App 컴포넌트
@@ -62,6 +63,17 @@ export const App = () => {
                         <Route path="/mood-input" element={<MoodInputPage />} />
                         <Route path="/loading" element={<LoadingPage />} />
                         <Route path="/result" element={<ResultPage />} />
+                        {/* 커뮤니티 라우트 - 목록/상세는 비로그인도 접근 가능 */}
+                        <Route path="/community" element={<CommunityPage />} />
+                        <Route path="/community/:postId" element={<PostDetailPage />} />
+                        <Route
+                            path="/community/write"
+                            element={
+                                <ProtectedRoute>
+                                    <WritePostPage />
+                                </ProtectedRoute>
+                            }
+                        />
                         <Route
                             path="/analysis"
                             element={

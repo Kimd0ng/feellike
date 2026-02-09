@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { COLORS, SPACING, RADIUS, SHADOWS } from '@feellike/ui';
 
 export const container = style({
     display: 'flex',
@@ -6,87 +7,87 @@ export const container = style({
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: '100vh',
-    padding: '24px',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    padding: `${SPACING.lg}px`,
+    background: `linear-gradient(135deg, ${COLORS.primary[300]} 0%, ${COLORS.secondary[400]} 100%)`,
 });
 
 export const card = style({
     display: 'flex',
     flexDirection: 'column',
-    gap: 24,
-    padding: 32,
+    gap: SPACING.lg,
+    padding: SPACING.xl,
     backgroundColor: 'rgba(255, 255, 255, 0.95)',
     backdropFilter: 'blur(10px)',
-    borderRadius: 24,
+    borderRadius: RADIUS.xxl,
     width: '100%',
     maxWidth: 400,
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+    boxShadow: SHADOWS.xl,
 });
 
 export const header = style({
     textAlign: 'center',
-    marginBottom: 8,
+    marginBottom: SPACING.sm,
 });
 
 export const title = style({
     fontSize: 28,
     fontWeight: 700,
-    color: '#333',
-    marginBottom: 8,
+    color: COLORS.gray[900],
+    marginBottom: SPACING.sm,
 });
 
 export const subtitle = style({
     fontSize: 14,
-    color: '#666',
+    color: COLORS.gray[600],
 });
 
 export const formSection = style({
     display: 'flex',
     flexDirection: 'column',
-    gap: 16,
+    gap: SPACING.md,
 });
 
 export const inputWrapper = style({
     display: 'flex',
     flexDirection: 'column',
-    gap: 8,
+    gap: SPACING.sm,
 });
 
 export const label = style({
     fontSize: 14,
     fontWeight: 500,
-    color: '#444',
+    color: COLORS.gray[700],
 });
 
 export const input = style({
-    padding: '14px 16px',
+    padding: `${SPACING.md}px ${SPACING.md}px`,
     fontSize: 16,
-    border: '1px solid #e0e0e0',
-    borderRadius: 12,
+    border: `1px solid ${COLORS.gray[300]}`,
+    borderRadius: RADIUS.lg,
     outline: 'none',
     transition: 'border-color 0.2s',
     ':focus': {
-        borderColor: '#667eea',
+        borderColor: COLORS.primary[300],
     },
 });
 
 export const inputError = style({
-    borderColor: '#dc2626',
+    borderColor: COLORS.error.main,
 });
 
 export const helperText = style({
     fontSize: 12,
-    color: '#999',
+    color: COLORS.gray[500],
 });
 
 export const footer = style({
     textAlign: 'center',
     fontSize: 14,
-    color: '#666',
+    color: COLORS.gray[600],
 });
 
 export const link = style({
-    color: '#667eea',
+    color: COLORS.primary[500],
     fontWeight: 500,
     textDecoration: 'none',
     cursor: 'pointer',
@@ -96,19 +97,19 @@ export const link = style({
 });
 
 export const errorMessage = style({
-    padding: 12,
-    backgroundColor: '#fee2e2',
-    borderRadius: 8,
-    color: '#dc2626',
+    padding: SPACING.sm,
+    backgroundColor: COLORS.error.light,
+    borderRadius: RADIUS.md,
+    color: COLORS.error.main,
     fontSize: 14,
     textAlign: 'center',
 });
 
 export const successMessage = style({
-    padding: 16,
-    backgroundColor: '#dcfce7',
-    borderRadius: 8,
-    color: '#16a34a',
+    padding: SPACING.md,
+    backgroundColor: COLORS.success.light,
+    borderRadius: RADIUS.md,
+    color: COLORS.success.main,
     fontSize: 14,
     textAlign: 'center',
 });

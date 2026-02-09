@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { COLORS, SPACING, RADIUS } from '@feellike/ui';
+import { COLORS, SPACING, RADIUS, SHADOWS } from '@feellike/ui';
 import { media } from '../../styles/media';
 
 export const container = style({
@@ -8,7 +8,7 @@ export const container = style({
     minHeight: '100vh',
     padding: SPACING.lg,
     paddingTop: SPACING.xl,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: COLORS.gray[50],
 });
 
 export const header = style({
@@ -24,7 +24,7 @@ export const header = style({
 export const title = style({
     fontSize: 28,
     fontWeight: 700,
-    color: '#111827',
+    color: COLORS.gray[900],
 });
 
 export const writeButton = style({
@@ -47,7 +47,7 @@ export const filterButton = style({
     padding: `${SPACING.xs}px ${SPACING.md}px`,
     borderRadius: RADIUS.full,
     border: `1px solid ${COLORS.gray[300]}`,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.white,
     color: COLORS.gray[600],
     fontSize: 14,
     cursor: 'pointer',
@@ -61,11 +61,11 @@ export const filterButton = style({
 export const filterButtonActive = style({
     backgroundColor: COLORS.primary[500],
     borderColor: COLORS.primary[500],
-    color: '#FFFFFF',
+    color: COLORS.white,
     ':hover': {
         backgroundColor: COLORS.primary[400],
         borderColor: COLORS.primary[400],
-        color: '#FFFFFF',
+        color: COLORS.white,
     },
 });
 
@@ -84,22 +84,22 @@ export const postsGrid = style({
 });
 
 export const postCard = style({
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.white,
     borderRadius: RADIUS.xl,
     padding: SPACING.lg,
-    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+    boxShadow: SHADOWS.sm,
     transition: 'transform 0.2s ease, box-shadow 0.2s ease',
     cursor: 'pointer',
     ':hover': {
         transform: 'translateY(-2px)',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+        boxShadow: SHADOWS.md,
     },
 });
 
 export const postTitle = style({
     fontSize: 18,
     fontWeight: 600,
-    color: '#111827',
+    color: COLORS.gray[900],
     marginBottom: SPACING.sm,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
@@ -108,7 +108,7 @@ export const postTitle = style({
 
 export const postContent = style({
     fontSize: 14,
-    color: '#6B7280',
+    color: COLORS.gray[600],
     lineHeight: 1.6,
     marginBottom: SPACING.md,
     display: '-webkit-box',
@@ -138,7 +138,7 @@ export const postMeta = style({
     justifyContent: 'space-between',
     alignItems: 'center',
     fontSize: 12,
-    color: '#9CA3AF',
+    color: COLORS.gray[400],
 });
 
 export const metaLeft = style({
@@ -155,13 +155,13 @@ export const metaItem = style({
 export const emptyState = style({
     textAlign: 'center',
     padding: `${SPACING.xl * 2}px`,
-    color: '#6B7280',
+    color: COLORS.gray[600],
 });
 
 export const emptyTitle = style({
     fontSize: 20,
     fontWeight: 600,
-    color: '#111827',
+    color: COLORS.gray[900],
     marginBottom: SPACING.sm,
 });
 
@@ -175,5 +175,5 @@ export const loadingState = style({
     justifyContent: 'center',
     alignItems: 'center',
     padding: `${SPACING.xl * 2}px`,
-    color: '#6B7280',
+    color: COLORS.gray[600],
 });

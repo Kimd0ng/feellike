@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { COLORS, SPACING, RADIUS } from '@feellike/ui';
 import { media } from '../../styles/media';
 
 export const container = style({
@@ -6,46 +7,45 @@ export const container = style({
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
-    padding: 24,
-    backgroundColor: '#F9FAFB',
+    padding: SPACING.lg,
+    backgroundColor: COLORS.gray[50],
 });
 
 export const header = style({
-    marginTop: 48,
-    marginBottom: 32,
-    textAlign: 'center', // Center align header on all screens
+    marginTop: SPACING.xxl,
+    marginBottom: SPACING.xl,
+    textAlign: 'center',
 });
 
 export const title = style({
     fontSize: 32,
     fontWeight: 700,
-    color: '#111827',
-    marginBottom: 8,
+    color: COLORS.gray[900],
+    marginBottom: SPACING.sm,
 });
 
 export const subtitle = style({
     fontSize: 16,
-    color: '#6B7280',
+    color: COLORS.gray[600],
 });
 
-// New wrapper for desktop layout
 export const contentWrapper = style({
     width: '100%',
     '@media': {
         [media.desktop]: {
             display: 'flex',
             alignItems: 'flex-start',
-            gap: 48,
-            marginTop: 32,
+            gap: SPACING.xxl,
+            marginTop: SPACING.xl,
         },
     },
 });
 
 export const emotionGrid = style({
     display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)', // Mobile: 2 columns
-    gap: 16,
-    marginBottom: 32,
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gap: SPACING.md,
+    marginBottom: SPACING.xl,
     '@media': {
         [media.tablet]: {
             gridTemplateColumns: 'repeat(4, 1fr)',
@@ -61,31 +61,31 @@ export const emotionGrid = style({
 export const divider = style({
     display: 'flex',
     alignItems: 'center',
-    gap: 16,
-    marginBottom: 32,
-    color: '#9CA3AF',
+    gap: SPACING.md,
+    marginBottom: SPACING.xl,
+    color: COLORS.gray[500],
     fontSize: 14,
     '::before': {
         content: '""',
         flex: 1,
         height: 1,
-        backgroundColor: '#E5E7EB',
+        backgroundColor: COLORS.gray[300],
     },
     '::after': {
         content: '""',
         flex: 1,
         height: 1,
-        backgroundColor: '#E5E7EB',
+        backgroundColor: COLORS.gray[300],
     },
     '@media': {
         [media.desktop]: {
-            display: 'none', // Hide divider on desktop side-by-side
+            display: 'none',
         },
     },
 });
 
 export const freeTextSection = style({
-    marginBottom: 32,
+    marginBottom: SPACING.xl,
     '@media': {
         [media.desktop]: {
             flex: 1,
@@ -101,7 +101,7 @@ export const freeTextSection = style({
 export const actions = style({
     display: 'flex',
     justifyContent: 'center',
-    gap: 16,
-    marginTop: 'auto', // Push to bottom if space is available
-    paddingTop: 32,
+    gap: SPACING.md,
+    marginTop: 'auto',
+    paddingTop: SPACING.xl,
 });

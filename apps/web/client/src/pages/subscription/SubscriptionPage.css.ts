@@ -1,20 +1,20 @@
 import { style } from '@vanilla-extract/css';
-import { COLORS } from '@feellike/ui';
+import { COLORS, SPACING, RADIUS, SHADOWS } from '@feellike/ui';
 import { media } from '../../styles/media';
 
 export const container = style({
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
-    padding: '24px',
+    padding: SPACING.lg,
     background: `linear-gradient(135deg, ${COLORS.gray[900]} 0%, ${COLORS.gray[800]} 100%)`,
 });
 
 export const header = style({
     display: 'flex',
     alignItems: 'center',
-    gap: 16,
-    marginBottom: 32,
+    gap: SPACING.md,
+    marginBottom: SPACING.xl,
 });
 
 export const backButton = style({
@@ -23,11 +23,11 @@ export const backButton = style({
     color: COLORS.white,
     fontSize: 24,
     cursor: 'pointer',
-    padding: 8,
-    borderRadius: 8,
+    padding: SPACING.sm,
+    borderRadius: RADIUS.md,
     transition: 'background 0.2s',
     ':hover': {
-        background: 'rgba(255, 255, 255, 0.1)',
+        background: COLORS.glass.light,
     },
 });
 
@@ -40,7 +40,7 @@ export const title = style({
 export const content = style({
     display: 'flex',
     flexDirection: 'column',
-    gap: 24,
+    gap: SPACING.lg,
     maxWidth: 480,
     width: '100%',
     margin: '0 auto',
@@ -55,17 +55,17 @@ export const content = style({
 });
 
 export const currentPlanCard = style({
-    padding: 24,
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    padding: SPACING.lg,
+    backgroundColor: COLORS.glass.light,
     backdropFilter: 'blur(10px)',
-    borderRadius: 16,
-    border: '1px solid rgba(255, 255, 255, 0.1)',
+    borderRadius: RADIUS.xl,
+    border: `1px solid ${COLORS.glass.light}`,
 });
 
 export const planLabel = style({
     fontSize: 14,
     color: COLORS.gray[400],
-    marginBottom: 8,
+    marginBottom: SPACING.sm,
 });
 
 export const planName = style({
@@ -74,14 +74,14 @@ export const planName = style({
     color: COLORS.white,
     display: 'flex',
     alignItems: 'center',
-    gap: 8,
+    gap: SPACING.sm,
 });
 
 export const planBadge = style({
     fontSize: 12,
     fontWeight: 600,
-    padding: '4px 8px',
-    borderRadius: 4,
+    padding: `${SPACING.xs}px ${SPACING.sm}px`,
+    borderRadius: RADIUS.xs,
     backgroundColor: COLORS.primary[300],
     color: COLORS.black,
 });
@@ -89,8 +89,8 @@ export const planBadge = style({
 export const freeBadge = style({
     fontSize: 12,
     fontWeight: 600,
-    padding: '4px 8px',
-    borderRadius: 4,
+    padding: `${SPACING.xs}px ${SPACING.sm}px`,
+    borderRadius: RADIUS.xs,
     backgroundColor: COLORS.gray[600],
     color: COLORS.white,
 });
@@ -98,36 +98,36 @@ export const freeBadge = style({
 export const expiresAt = style({
     fontSize: 14,
     color: COLORS.gray[400],
-    marginTop: 8,
+    marginTop: SPACING.sm,
 });
 
 export const usageCard = style({
-    padding: 24,
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    padding: SPACING.lg,
+    backgroundColor: COLORS.glass.light,
     backdropFilter: 'blur(10px)',
-    borderRadius: 16,
-    border: '1px solid rgba(255, 255, 255, 0.1)',
+    borderRadius: RADIUS.xl,
+    border: `1px solid ${COLORS.glass.light}`,
 });
 
 export const usageTitle = style({
     fontSize: 16,
     fontWeight: 600,
     color: COLORS.white,
-    marginBottom: 12,
+    marginBottom: SPACING.sm,
 });
 
 export const usageBar = style({
     height: 8,
     backgroundColor: COLORS.gray[700],
-    borderRadius: 4,
+    borderRadius: RADIUS.xs,
     overflow: 'hidden',
-    marginBottom: 8,
+    marginBottom: SPACING.sm,
 });
 
 export const usageProgress = style({
     height: '100%',
     backgroundColor: COLORS.primary[300],
-    borderRadius: 4,
+    borderRadius: RADIUS.xs,
     transition: 'width 0.3s ease',
 });
 
@@ -137,12 +137,11 @@ export const usageText = style({
 });
 
 export const premiumCard = style({
-    padding: 32,
+    padding: SPACING.xl,
     background: `linear-gradient(135deg, ${COLORS.primary[400]} 0%, ${COLORS.primary[300]} 100%)`,
-    borderRadius: 20,
+    borderRadius: RADIUS.xxl,
     position: 'relative',
     overflow: 'hidden',
-    // Make premium card span 2 rows on desktop if needed, or stick to flow
     '@media': {
         [media.desktop]: {
             gridRow: 'span 2',
@@ -156,21 +155,21 @@ export const premiumLabel = style({
     color: COLORS.black,
     textTransform: 'uppercase',
     letterSpacing: 1,
-    marginBottom: 8,
+    marginBottom: SPACING.sm,
 });
 
 export const premiumTitle = style({
     fontSize: 28,
     fontWeight: 800,
     color: COLORS.black,
-    marginBottom: 8,
+    marginBottom: SPACING.sm,
 });
 
 export const premiumPrice = style({
     fontSize: 36,
     fontWeight: 800,
     color: COLORS.black,
-    marginBottom: 24,
+    marginBottom: SPACING.lg,
 });
 
 export const premiumPeriod = style({
@@ -182,16 +181,16 @@ export const premiumPeriod = style({
 export const featureList = style({
     listStyle: 'none',
     padding: 0,
-    margin: '0 0 24px 0',
+    margin: `0 0 ${SPACING.lg}px 0`,
 });
 
 export const featureItem = style({
     display: 'flex',
     alignItems: 'center',
-    gap: 8,
+    gap: SPACING.sm,
     fontSize: 16,
     color: COLORS.black,
-    marginBottom: 12,
+    marginBottom: SPACING.sm,
 });
 
 export const featureIcon = style({
@@ -201,18 +200,18 @@ export const featureIcon = style({
 
 export const subscribeButton = style({
     width: '100%',
-    padding: '16px 24px',
+    padding: `${SPACING.md}px ${SPACING.lg}px`,
     fontSize: 18,
     fontWeight: 700,
     color: COLORS.white,
     backgroundColor: COLORS.gray[900],
     border: 'none',
-    borderRadius: 12,
+    borderRadius: RADIUS.lg,
     cursor: 'pointer',
     transition: 'transform 0.2s, box-shadow 0.2s',
     ':hover': {
         transform: 'translateY(-2px)',
-        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)',
+        boxShadow: SHADOWS.xl,
     },
     ':disabled': {
         opacity: 0.6,
@@ -223,13 +222,13 @@ export const subscribeButton = style({
 
 export const cancelButton = style({
     width: '100%',
-    padding: '16px 24px',
+    padding: `${SPACING.md}px ${SPACING.lg}px`,
     fontSize: 16,
     fontWeight: 600,
     color: COLORS.gray[400],
     backgroundColor: 'transparent',
     border: `1px solid ${COLORS.gray[600]}`,
-    borderRadius: 12,
+    borderRadius: RADIUS.lg,
     cursor: 'pointer',
     transition: 'all 0.2s',
     ':hover': {
@@ -239,11 +238,11 @@ export const cancelButton = style({
 });
 
 export const paymentHistory = style({
-    padding: 24,
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    padding: SPACING.lg,
+    backgroundColor: COLORS.glass.light,
     backdropFilter: 'blur(10px)',
-    borderRadius: 16,
-    border: '1px solid rgba(255, 255, 255, 0.1)',
+    borderRadius: RADIUS.xl,
+    border: `1px solid ${COLORS.glass.light}`,
     '@media': {
         [media.desktop]: {
             gridColumn: '1 / -1',
@@ -255,14 +254,14 @@ export const historyTitle = style({
     fontSize: 18,
     fontWeight: 600,
     color: COLORS.white,
-    marginBottom: 16,
+    marginBottom: SPACING.md,
 });
 
 export const historyItem = style({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '12px 0',
+    padding: `${SPACING.sm}px 0`,
     borderBottom: `1px solid ${COLORS.gray[700]}`,
     ':last-child': {
         borderBottom: 'none',
@@ -282,8 +281,8 @@ export const historyAmount = style({
 
 export const historyStatus = style({
     fontSize: 12,
-    padding: '4px 8px',
-    borderRadius: 4,
+    padding: `${SPACING.xs}px ${SPACING.sm}px`,
+    borderRadius: RADIUS.xs,
 });
 
 export const statusCompleted = style({
@@ -299,5 +298,5 @@ export const statusFailed = style({
 export const emptyHistory = style({
     textAlign: 'center',
     color: COLORS.gray[500],
-    padding: 24,
+    padding: SPACING.lg,
 });

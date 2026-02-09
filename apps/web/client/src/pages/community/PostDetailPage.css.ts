@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { COLORS, SPACING, RADIUS } from '@feellike/ui';
+import { COLORS, SPACING, RADIUS, SHADOWS } from '@feellike/ui';
 
 export const container = style({
     display: 'flex',
@@ -7,7 +7,7 @@ export const container = style({
     minHeight: '100vh',
     padding: SPACING.lg,
     paddingTop: SPACING.xl,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: COLORS.gray[50],
 });
 
 export const backButton = style({
@@ -33,10 +33,10 @@ export const content = style({
 });
 
 export const postCard = style({
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.white,
     borderRadius: RADIUS.xl,
     padding: SPACING.xl,
-    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+    boxShadow: SHADOWS.sm,
     marginBottom: SPACING.lg,
 });
 
@@ -50,7 +50,7 @@ export const postHeader = style({
 export const postTitle = style({
     fontSize: 24,
     fontWeight: 700,
-    color: '#111827',
+    color: COLORS.gray[900],
     marginBottom: SPACING.sm,
 });
 
@@ -58,12 +58,12 @@ export const postMeta = style({
     display: 'flex',
     gap: SPACING.md,
     fontSize: 14,
-    color: '#9CA3AF',
+    color: COLORS.gray[400],
 });
 
 export const postContent = style({
     fontSize: 16,
-    color: '#374151',
+    color: COLORS.gray[700],
     lineHeight: 1.8,
     marginBottom: SPACING.xl,
     whiteSpace: 'pre-wrap',
@@ -100,7 +100,7 @@ export const likeButton = style({
     padding: `${SPACING.sm}px ${SPACING.md}px`,
     borderRadius: RADIUS.lg,
     border: `1px solid ${COLORS.gray[300]}`,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.white,
     color: COLORS.gray[600],
     fontSize: 14,
     cursor: 'pointer',
@@ -121,7 +121,7 @@ export const stats = style({
     display: 'flex',
     gap: SPACING.md,
     fontSize: 14,
-    color: '#9CA3AF',
+    color: COLORS.gray[400],
 });
 
 export const statItem = style({
@@ -133,29 +133,29 @@ export const statItem = style({
 export const deleteButton = style({
     padding: `${SPACING.sm}px ${SPACING.md}px`,
     borderRadius: RADIUS.lg,
-    border: `1px solid #EF4444`,
-    backgroundColor: '#FFFFFF',
-    color: '#EF4444',
+    border: `1px solid ${COLORS.error.main}`,
+    backgroundColor: COLORS.white,
+    color: COLORS.error.main,
     fontSize: 14,
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     ':hover': {
-        backgroundColor: '#EF4444',
-        color: '#FFFFFF',
+        backgroundColor: COLORS.error.main,
+        color: COLORS.white,
     },
 });
 
 export const commentsSection = style({
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.white,
     borderRadius: RADIUS.xl,
     padding: SPACING.xl,
-    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+    boxShadow: SHADOWS.sm,
 });
 
 export const commentsTitle = style({
     fontSize: 18,
     fontWeight: 600,
-    color: '#111827',
+    color: COLORS.gray[900],
     marginBottom: SPACING.lg,
 });
 
@@ -206,17 +206,17 @@ export const commentHeader = style({
 export const commentAuthor = style({
     fontSize: 14,
     fontWeight: 500,
-    color: '#374151',
+    color: COLORS.gray[700],
 });
 
 export const commentDate = style({
     fontSize: 12,
-    color: '#9CA3AF',
+    color: COLORS.gray[400],
 });
 
 export const commentContent = style({
     fontSize: 14,
-    color: '#4B5563',
+    color: COLORS.gray[600],
     lineHeight: 1.6,
 });
 
@@ -232,11 +232,11 @@ export const loadingState = style({
     justifyContent: 'center',
     alignItems: 'center',
     padding: `${SPACING.xl * 2}px`,
-    color: '#6B7280',
+    color: COLORS.gray[600],
 });
 
 export const notFound = style({
     textAlign: 'center',
     padding: `${SPACING.xl * 2}px`,
-    color: '#6B7280',
+    color: COLORS.gray[600],
 });

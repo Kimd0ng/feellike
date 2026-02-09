@@ -6,7 +6,7 @@ export const container = style({
     flexDirection: 'column',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#F9FAFB',
+    backgroundColor: COLORS.gray[50],
     minHeight: '100%',
 });
 

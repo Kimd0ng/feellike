@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { COLORS, SPACING, RADIUS } from '@feellike/ui';
+import { COLORS, SPACING, RADIUS, SHADOWS } from '@feellike/ui';
 
 export const container = style({
     display: 'flex',
@@ -7,7 +7,7 @@ export const container = style({
     minHeight: '100vh',
     padding: SPACING.lg,
     paddingTop: SPACING.xl,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: COLORS.gray[50],
 });
 
 export const backButton = style({
@@ -33,16 +33,16 @@ export const content = style({
 });
 
 export const formCard = style({
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.white,
     borderRadius: RADIUS.xl,
     padding: SPACING.xl,
-    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+    boxShadow: SHADOWS.sm,
 });
 
 export const formTitle = style({
     fontSize: 24,
     fontWeight: 700,
-    color: '#111827',
+    color: COLORS.gray[900],
     marginBottom: SPACING.xl,
 });
 
@@ -54,7 +54,7 @@ export const label = style({
     display: 'block',
     fontSize: 14,
     fontWeight: 500,
-    color: '#374151',
+    color: COLORS.gray[700],
     marginBottom: SPACING.xs,
 });
 
@@ -109,7 +109,7 @@ export const emotionInfo = style({
 export const emotionTag = style({
     padding: `${SPACING.xs}px ${SPACING.md}px`,
     borderRadius: RADIUS.full,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.white,
     color: COLORS.primary[500],
     fontSize: 14,
     fontWeight: 500,
@@ -131,7 +131,7 @@ export const checkbox = style({
 
 export const checkboxLabel = style({
     fontSize: 14,
-    color: '#4B5563',
+    color: COLORS.gray[600],
     cursor: 'pointer',
 });
 
@@ -144,6 +144,6 @@ export const actions = style({
 
 export const hint = style({
     fontSize: 12,
-    color: '#9CA3AF',
+    color: COLORS.gray[400],
     marginTop: SPACING.xs,
 });

@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { COLORS, SPACING, RADIUS } from '@feellike/ui';
+import { COLORS, SPACING } from '@feellike/ui';
 import { media } from '../../styles/media';
 
 export const container = style({
